@@ -23,7 +23,7 @@ int main()
 
     int arr[3][3];
 
-    cout << "Enter the elements " << endl;
+    cout << "Enter the elements:" << endl;
     // taking input -> row wise input
     for (int row = 0; row < 3; row++)
     {
@@ -44,17 +44,17 @@ int main()
         cout << endl;
     }
 
-    cout << " Enter the element to search " << endl;
+    cout << "Enter the element to search:" << endl;
     int target;
     cin >> target;
 
     if (isPresent(arr, target, 3, 3))
     {
-        cout << " Element found " << endl;
+        cout << "Element found" << endl;
     }
     else
     {
-        cout << " Not Found" << endl;
+        cout << "Not Found" << endl;
     }
 
     return 0;
