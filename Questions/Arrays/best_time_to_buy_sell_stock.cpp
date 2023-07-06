@@ -10,7 +10,19 @@ public:
         cout<<maxProfit(prices);
         
     }
-    
+    int maxProfit(vector<int>& prices) 
+    {
+        int n = prices.size();
+        int maxi = 0;
+        int minPrice = numeric_limits<int>::max();
+        
+        for (int i = 0; i < n; i++) {
+            minPrice = min(minPrice, prices[i]);
+            maxi = max(maxi, prices[i] - minPrice);
+        }
+        
+        return maxi;
+    }
 };
 int main()
 {
