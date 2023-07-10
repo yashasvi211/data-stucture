@@ -16,6 +16,7 @@ vector < vector < int >> rotate(vector < vector < int >> & matrix) {
 int main() {
     vector < vector < int >> arr;
     arr =  {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    cout<<"Initial Array:";
     vector < vector < int >> rotated = rotate(arr);
     cout << "Rotated Image" << endl;
     for (int i = 0; i < rotated.size(); i++) {
