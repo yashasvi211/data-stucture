@@ -10,7 +10,7 @@ vector<vector<int>> rotate(vector<vector<int>> &matrix)
     {
         for (int j = 0; j < n; j++)
         {
-            rotated[j][i - n - 1] = matrix[i][j];
+            rotated[j][n - i - 1] = matrix[i][j];
         }
     }
     return rotated;
@@ -27,6 +27,7 @@ int main()
         {
             cout << arr[i][j] << " ";
         }
+        cout << endl;
     }
     vector<vector<int>> rotated = rotate(arr);
     cout << "Rotated Image" << endl;
