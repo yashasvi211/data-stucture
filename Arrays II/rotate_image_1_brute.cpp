@@ -23,7 +23,7 @@ int main()
     cout << "Initial Array:" << endl;
     for (int i = 0; i < arr.size(); i++)
     {
-        for (int j = 0; j < arr[0].size(); j++)
+        for (int j = i+1; j < arr[0].size(); j++)
         {
             cout << arr[i][j] << " ";
         }
