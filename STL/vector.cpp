@@ -11,16 +11,17 @@ int main()
     {
         int data;
         cout<<"Enter data for index "<<j<<":";
+        cin>>data;
         arr.push_back(data);
     }
         for(int j=0;j<i;j++)
     {
-        int data;
-        cout<<"Data of index "<<j<<":"<<arr[j];
+ 
+        cout<<"Data of index "<<j<<":"<<arr[j]<<endl;
  
     }
-    cout<<"Arr back"<<arr.back()<<endl;
-    cout<<"arr capicity"<<arr.capacity()<<endl;
-    cout<<"arr empty"<<arr.empty()<<endl;
+    cout<<"Arr Back:"<<arr.back()<<endl;
+    cout<<"Arr Capicity:"<<arr.capacity()<<endl;
+    cout<<"Arr empty:"<<arr.empty() <<endl;
     
 }
