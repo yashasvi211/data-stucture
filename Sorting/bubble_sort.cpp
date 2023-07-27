@@ -1,43 +1,100 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-void bubbleSort(int arr[], int n)
+void bubbleSortde(int arr[], int n)
 {
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        bool swapped = false;
-        for(int j=0;j<n-i-1;j++)
+        for (int j = 0; j < i; j++)
         {
-            if(arr[j]>arr[j+1])
+            if (arr[i] < arr[j])
             {
-                swap(arr[j], arr[j+1]);
-                swapped = true;
+                swap(arr[i], arr[j]);
             }
         }
-        if(swapped==false)
+    }
+}
+void bubbleSortin(int arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < i; j++)
         {
-            break;
+            if (arr[i] < arr[j])
+            {
+                swap(arr[i], arr[j]);
+            }
         }
     }
 }
-void display(int *arr,int n)
+void display(int *arr, int n)
 {
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        cout<<arr[i]<<" ";
+        cout << arr[i] << " ";
     }
+     cout<<endl;
+     cout<<endl;
 }
+
 int main(void)
 {
-    int n;
-    cout<<"Enter the size of the array: ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter the input: ";
-    for(int i=0;i<n;i++)
+    
+    bool firstTime = true; // Flag to check if it's the first time running the program
+
+    while (true)
     {
-        cin>>arr[i];
+        if (firstTime)
+        { 
+            cout << "Welcome to the Bubble Sort Program!" << endl;
+            firstTime = false;
+            cout<<endl;
+        }
+       
+        short int i; 
+        cout << "1. Increasing Bubble Sort" << endl;
+        cout << "2. Decreasing Bubble Sort" << endl; 
+        cout << "3. Exit" << endl;
+              cout << "Select a choice:";
+        cin >> i;
+
+        if (i == 1 || i == 2)
+        {
+            int n;
+            cout << "Enter the size of the array: ";
+            cin >> n;
+
+            int arr[n];  
+
+            cout << "Enter the input: ";
+            for (int i = 0; i < n; i++)
+            {
+                cin >> arr[i];
+            }
+            cout<<endl;
+            if (i == 2)
+            {
+                bubbleSortde(arr, n);
+            }
+            else if (i == 1)
+            {
+                bubbleSortin(arr, n);
+            }
+
+            cout << "The Sorted Output is: ";
+
+            display(arr, n);  
+                  
+        }
+        else if (i == 3)
+        {
+            cout << "Thanks For Using" << endl;
+            return 0;
+        }
+        else
+        {
+            cout << "Wrong Input" << endl << "Try Again";
+        }
+ 
     }
-    bubbleSort(arr,n);
-    cout<<"The Sorted Output is: ";
-    display(arr,n);
+ 
 }
