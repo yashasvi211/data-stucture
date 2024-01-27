@@ -12,7 +12,7 @@ class ll {
 
     public static node head;
 
-    public void add(int data) {
+    public void addfront(int data) {
         node newNode = new node(data);
         if (head == null) {
             head = newNode;
@@ -21,6 +21,19 @@ class ll {
         newNode.next = head;
         head = newNode;
 
+    }
+
+    public void addback(int data) {
+        node newNode = new node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        node temp = head;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = newNode;
     }
 
     public void display() {
@@ -38,10 +51,12 @@ public class ll_adding {
 
     public static void main(String args[]) {
         ll trial = new ll();
-        trial.add(7);
-        trial.add(11);
-        trial.add(4);
-        trial.add(7);
+        trial.addfront(7);
+        trial.addfront(11);
+        trial.addfront(4);
+        trial.addfront(7);
+        trial.addfront(17);
+        trial.addback(10);
         trial.display();
 
     }
