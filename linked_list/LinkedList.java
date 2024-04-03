@@ -1,35 +1,33 @@
-
-class ll {
-    public class node {
+class LinkedList {
+    public class Node {
         int data;
-        node next;
+        Node next;
 
-        public node(int data) {
+        public Node(int data) {
             this.data = data;
             this.next = null;
         }
     }
 
-    public static node head;
+    public Node head;
 
-    public void addfront(int data) {
-        node newNode = new node(data);
+    public void addFront(int data) {
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             return;
         }
         newNode.next = head;
         head = newNode;
-
     }
 
-    public void addback(int data) {
-        node newNode = new node(data);
+    public void addBack(int data) {
+        Node newNode = new Node(data);
         if (head == null) {
             head = newNode;
             return;
         }
-        node temp = head;
+        Node temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
@@ -37,7 +35,7 @@ class ll {
     }
 
     public void display() {
-        node current = head;
+        Node current = head;
 
         while (current != null) {
             System.out.print(current.data + " -> ");
@@ -47,18 +45,3 @@ class ll {
     }
 
 }
-
-public class adding {
-
-    public static void main(String args[]) {
-        ll trial = new ll();
-        trial.addfront(7);
-        trial.addfront(11);
-        trial.addfront(4);
-        trial.addfront(7);
-        trial.addfront(17);
-        trial.addback(10);
-        trial.display();
-
-    }
-};
