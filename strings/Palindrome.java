@@ -9,11 +9,7 @@ class Palindrome {
         }
 
         String filteredString = sb.toString();
-        String reversedString = sb.reverse().toString();
-
-        // Debugging output
-        System.out.println(filteredString);
-        System.out.println(reversedString);
+        String reversedString = new StringBuilder(filteredString).reverse().toString();
 
         // Check if the filtered string is equal to its reverse
         return reversedString.equals(filteredString);
