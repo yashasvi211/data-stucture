@@ -1,5 +1,5 @@
 class LinkedList {
-    public class Node {
+    public static class Node {
         int data;
         Node next;
 
@@ -9,39 +9,35 @@ class LinkedList {
         }
     }
 
-    public Node head;
+    public static Node head;
+    public static Node tail;
 
-    public void addFront(int data) {
+    public void add(int data) {
         Node newNode = new Node(data);
         if (head == null) {
-            head = newNode;
+            head = tail = newNode;
             return;
         }
         newNode.next = head;
         head = newNode;
     }
 
-    public void addBack(int data) {
+    void addLast(int data) {
         Node newNode = new Node(data);
         if (head == null) {
-            head = newNode;
-            return;
+            head = tail = newNode;
         }
-        Node temp = head;
-        while (temp.next != null) {
-            temp = temp.next;
-        }
-        temp.next = newNode;
+        tail.next = newNode;
+        newNode = tail;
     }
 
-    public void display() {
-        Node current = head;
-
-        while (current != null) {
-            System.out.print(current.data + " -> ");
-            current = current.next;
+    public void print() {
+        Node temp = head;
+        while (temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
         }
-        System.out.println("nulls");
+        System.out.println("null");
     }
 
 }
