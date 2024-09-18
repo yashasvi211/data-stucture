@@ -1,16 +1,16 @@
-public class factorial {
-    public static int fact(int n) {
-        if (n == 0) {
+class factorial{
+    static int findfact(int no)
+    {
+        if(no==1)
+        {
+            System.out.println(no+" ");
             return 1;
         }
-        int ans = n * fact(n - 1);
-
-        return ans;
+       
+        return no*findfact(no-1);
 
     }
-
     public static void main(String[] args) {
-        int a = 4;
-        System.out.println(fact(a));
+        System.out.println(findfact(5));
     }
-}
+ }
